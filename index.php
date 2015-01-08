@@ -1,4 +1,68 @@
 <?php
+//<------------------------------------------- Lesson 2 ------------------------------------------------------>
+//<------ Example 1------>
+	class zebra {
+		public $firstName;
+		public $lastName;
+		public $color;
+
+		function __construct($title, $firstName, $lastName, $color) {
+			$this­>firstName = $firstName;
+			$this­>lastName = $lastName;
+			$this­>color = $color;
+		}
+		function getName() {
+		return “{$this­>firstName}” .
+		“{$this­>lastName}”;
+		}
+}		
+
+	class hippo {
+		public $firstName;
+		public $lastName;
+		public $color;
+
+		function __construct($title, $firstName, $lastName, $color) {
+			$this­>firstName = $firstName;
+			$this­>lastName = $lastName;
+			$this­>color = $color;
+		}
+		function getName() {
+		return “{$this­>firstName}” .
+		“{$this­>lastName}”;
+		}
+	}
+	class tiger {
+		public $firstName;
+		public $lastName;
+		public $color;
+
+		function __construct($title, $firstName, $lastName, $color) {
+			$this­>firstName = $firstName;
+			$this­>lastName = $lastName;
+			$this­>color = $color;
+		}
+		function getName() {
+		return “{$this­>firstName}” .
+		“{$this­>lastName}”;
+		}
+	}
+//<------ Example 2------>
+	$zebra1 = new zebra("zeke", "Mendel", "black and white");
+	print "zebra 1: {$zebra1­>getName()}";
+
+	$hippo1 = new hippo("Hairy", "Wright", "purple");
+	print "hippo 1: {$hippo1­>getName()}";
+
+	$tiger1 = new tiger("Terrance", "Trueman", "orange and black");
+	print "tiger 1: {$tiger1­>getName()}";
+
+
+
+
+
+
+//<-------------------------------------- Lesson 1 ----------------------------------------------------------->
 	class hair {
 		//class body
 	}
