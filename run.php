@@ -23,9 +23,9 @@
 
 	echo "<br>";
 //<---------- Example 3 ----------->	
-	$twentyone = "9 + 10";
+	$twentyone = 9 + 10;
 
-	if(is_integer($twentyone)) { /*if 9 + 10 is an integer that it'll echoe that it is*/
+	if(is_integer($twentyone)) { /*if 9 + 10 is an integer that it'll echo that it is*/
 		echo "9 + 10 is an integer";/*this should run*/
 	}
 
