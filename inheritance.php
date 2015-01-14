@@ -6,16 +6,16 @@
 		public $color;
 		public $size;
 		public $taste;
-		public $vegetable;
-		public $meat;
+		//public $vegetable;
+		//public $meat;
 
-		function __construct($name, $color, $size, $taste, $vegetable, $meat) {
+		function __construct($name, $color, $size, $taste/*$vegetable, $meat*/) {
 			$this->name =$name;
 			$this->color = $color;
 			$this->size = $size;
 			$this->taste = $taste;
-			$this->vegetable = $vegetable;
-			$this->meat = $meat;
+			//$this->vegetable = $vegetable;
+			//$this->meat = $meat;
 		}
 
 		function getName() {
@@ -24,12 +24,20 @@
 	}
 
 	class Vegetable extends Food {
+		function __construct($name, $color, $size, $taste, $vegetable) {
+			parent::__construct($name, $color, $size, $taste);
+			$this->vegetable = $vegetable;
+		}
 		function greet() {
 			echo $this->vegetable;
 		}
 	}
 
 	class Meat extends Food {
+		function __construct($name, $color, $size, $taste, $meat) {
+			parent::__construct($name, $color, $size, $taste);
+			$this->meat = $meat;
+		}
 		function hello() {
 			echo $this->meat;
 		}
@@ -62,19 +70,27 @@
 	}
 
 	class Gaming extends Computer {
+		function __construct($processor, $graphicsCards, $motherboard, $fans, $powersupply, $ram, $gamingMouse) {
+			parent::__construct($processor, $graphicsCards, $motherboard, $fans, $powersupply, $ram);
+			$this->gamingMouse = $gamingMouse;
+		}
 		function masterRace() {
-			echo "PC is the master race because of my " . $this->processor;
+			echo "PC is the master race because of my " . $this->processor . " and to help with aiming i have a " . $this->gamingMouse;
 		}  
 	}
 	class School extends Computer {
+		function __construct($processor, $graphicsCards, $motherboard, $fans, $powersupply, $ram, $Potato) {
+			parent::__construct($processor, $graphicsCards, $motherboard, $fans, $powersupply, $ram);
+			$this->Potato = $Potato;
+		}
 		function trash() {
-			echo "the school laptops are trash cause they have " . $this->processor;
+			echo "the school laptops are trash cause they have " . $this->processor . "so they are a " . $this->Potato;
 			}
 	}
-	$thing = new Gaming("I5 processor", "doesnt", "matter", "filler", "text", "book");
+	$thing = new Gaming("I5 processor", "doesnt", "matter", "filler", "text", "book", "SteelSeries Sensei");
 	echo $thing->masterRace();
 	echo "<br>"; 
-	$IMO = new School("I3 processors", "doesnt", "matter", "filler", "text", "book");
+	$IMO = new School("I3 processors", "doesnt", "matter", "filler", "text", "book", "Potato");
 	echo $IMO->trash();
 	echo "<br>";
 //<-----Example 3---->
@@ -86,13 +102,13 @@
 		public $length;
 		public $pattern;
 	
-		function __construct($material, $madeIn, $color, $size, $length, $pattern) {
+		function __construct($material, $madeIn, $color, $size/*$length, $pattern*/) {
 			$this->material = $material;
 			$this->madeIn = $madeIn;	
 			$this->color = $color;
 			$this->size = $size;
-			$this->length = $length;
-			$this->pattern = $pattern;	
+			//$this->length = $length;
+			//$this->pattern = $pattern;	
 		}
 
 		function aboutClothes() {
@@ -101,11 +117,18 @@
 	}
 
 	class Shirt extends Clothes {
+		function __construct($material, $madeIn, $color, $size, $length) {
+			parent::__construct($material, $madeIn, $color, $size);
+			$this->length = $length;
+		}
 		function bestShirt() {
 			echo "Since I am a shirt i have " . $this->length . " sleeves";
 		}  
 	}
 	class Socks extends Clothes {
+		function __construct($material, $madeIn, $color, $size, $pattern) {
+			parent::__construct($material, $madeIn, $color, $size);
+		}
 		function bestSocks() {
 			echo "I am a pair of socks with a " . $this->pattern . " pattern";
 		}
